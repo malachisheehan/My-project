@@ -634,7 +634,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5996216679857274585, guid: c6a748e286f3ccf479d8fd99826d8308, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 15.5
+      value: 12.5
       objectReference: {fileID: 0}
     - target: {fileID: 5996216679857274585, guid: c6a748e286f3ccf479d8fd99826d8308, type: 3}
       propertyPath: m_LocalPosition.y
@@ -819,7 +819,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   rb: {fileID: 1206452707}
   gameManager: {fileID: 1558566024}
-  ballSpeed: 3
+  ballSpeed: 9
   maxInitalAngle: 0.67
   startingPosisiton: {x: 0, y: 0}
 --- !u!50 &1206452707
@@ -1296,7 +1296,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5996216679857274585, guid: c6a748e286f3ccf479d8fd99826d8308, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -9
+      value: -6
       objectReference: {fileID: 0}
     - target: {fileID: 5996216679857274585, guid: c6a748e286f3ccf479d8fd99826d8308, type: 3}
       propertyPath: m_LocalPosition.y
