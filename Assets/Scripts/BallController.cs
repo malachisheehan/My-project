@@ -9,10 +9,10 @@ public class BallController : MonoBehaviour
     public float maxInitalAngle = 0.67f;
     public Vector2 startingPosisiton = Vector2.zero;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
-    {
-        Invoke("Serve", 3);
-    }
+    //void Start()
+    //{
+    //    Invoke("Serve", 3);
+    //}
 
     // Update is called once per frame
     void Update()
@@ -22,7 +22,7 @@ public class BallController : MonoBehaviour
 
     }
 
-     void Serve()
+     public void Serve()
     {
         // Find the rigidbody component
         //rb = GetComponent<Rigidbody2D>();
@@ -44,8 +44,13 @@ public class BallController : MonoBehaviour
     {
         Debug.Log(collision.tag);
         gameManager.SetScores(collision.tag);
-        ResetBall();
-        Invoke("Serve", 2);
+
+        if (!gameManager.CheckWin())
+        {
+            ResetBall();
+            Invoke("Serve", 2);
+        }
+        
     }
 
     public void ResetBall()
