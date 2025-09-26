@@ -2,8 +2,7 @@ using UnityEngine;
 
 public class GameManager : MonoBehaviour
 {
-    int scoreOfPlayer1, scoreOfPlayer2;
-    //public ScoreTextController scoreTextLeft, scoreTextRight;
+    int scoreOfPlayer1, scoreOfPlayer2 = 0;
     public GameUIController gameUI;
     int winScore = 4;
 
