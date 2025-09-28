@@ -8,6 +8,20 @@ public class GameUIController : MonoBehaviour
     public BallController ball;
     public TextMeshProUGUI winText;
 
+
+
+    private void OnEnable()
+    {
+        GameManager.Instance.OnscoreChanged += UpdateScoreBoard;
+        GameManager.Instance.OnWin += HandleWin;
+    }
+
+    private void OnDisable()
+    {
+        GameManager.Instance.OnscoreChanged -= UpdateScoreBoard;
+        GameManager.Instance.OnWin -= HandleWin;
+    }
+
      public void UpdateScoreBoard(int scoreOfPlayer1, int scoreOfPlayer2)
     {
         scoreTextPlayer1.SetScore(scoreOfPlayer1);
