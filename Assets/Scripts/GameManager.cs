@@ -1,4 +1,5 @@
 using UnityEngine;
+using System;
 
 public class GameManager : MonoBehaviour
 {
@@ -6,7 +7,7 @@ public class GameManager : MonoBehaviour
     public static GameManager Instance { get; private set; }
 
 
-    public event Action<int, int> OnscoreChanged;
+    public event Action<int, int> OnScoreChanged;
     public event Action<int> OnWin;
     int scoreOfPlayer1, scoreOfPlayer2 = 0;
     int winScore = 4;
@@ -42,7 +43,7 @@ public class GameManager : MonoBehaviour
         if(winnerId != 0)
         {
             //gameUI.OnWin(winnerId);
-            OnWin?Invoke(winnerId);
+            OnWin?.Invoke(winnerId);
             return true;
         }
         return false;
