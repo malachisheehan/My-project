@@ -34,7 +34,7 @@ public class GameManager : MonoBehaviour
         if (zoneTag == "RightZone")
             scoreOfPlayer1++;
         //gameUI.UpdateScoreBoard(scoreOfPlayer1, scoreOfPlayer2);
-        OnscoreChanged?.Invoke(scoreOfPlayer1, scoreOfPlayer2);
+        OnScoreChanged?.Invoke(scoreOfPlayer1, scoreOfPlayer2);
     }
 
     public bool CheckWin()
