@@ -1,6 +1,7 @@
 using UnityEngine;
 using TMPro;
 
+
 public class GameUIController : MonoBehaviour
 {
     public ScoreTextController scoreTextPlayer1, scoreTextPlayer2;
@@ -12,13 +13,13 @@ public class GameUIController : MonoBehaviour
 
     private void OnEnable()
     {
-        GameManager.Instance.OnscoreChanged += UpdateScoreBoard;
+        GameManager.Instance.OnScoreChanged += UpdateScoreBoard;
         GameManager.Instance.OnWin += HandleWin;
     }
 
     private void OnDisable()
     {
-        GameManager.Instance.OnscoreChanged -= UpdateScoreBoard;
+        GameManager.Instance.OnScoreChanged -= UpdateScoreBoard;
         GameManager.Instance.OnWin -= HandleWin;
     }
 
@@ -34,7 +35,7 @@ public class GameUIController : MonoBehaviour
         ball.Serve();
     }
 
-    public void OnWin(int winnerId)
+    public void HandleWin(int winnerId)
     {
         gameMenu.SetActive(true);
         winText.text = $"Player {winnerId} wins!";
