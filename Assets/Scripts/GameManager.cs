@@ -10,7 +10,7 @@ public class GameManager : MonoBehaviour
     public event Action<int, int> OnScoreChanged;
     public event Action<int> OnWin;
     int scoreOfPlayer1, scoreOfPlayer2 = 0;
-    int winScore = 4;
+    int winScore = 5;
 
     private void Awake()
     {

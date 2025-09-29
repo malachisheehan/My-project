@@ -10,13 +10,14 @@ public class GameUIController : MonoBehaviour
     public TextMeshProUGUI winText;
 
 
-
-    private void OnStart()
+    //subscibes to the actions when the program is started
+    private void Start()
     {
         GameManager.Instance.OnScoreChanged += UpdateScoreBoard;
         GameManager.Instance.OnWin += HandleWin;
     }
 
+    //unsubscibes to the actions when the program is destroyed
     private void OnDetroy()
     {
         GameManager.Instance.OnScoreChanged -= UpdateScoreBoard;
@@ -25,7 +26,6 @@ public class GameUIController : MonoBehaviour
 
      public void UpdateScoreBoard(int scoreOfPlayer1, int scoreOfPlayer2)
     {
-        Debug.Log($"Updating score ui: {scoreOfPlayer1}-{scoreOfPlayer2}");
         scoreTextPlayer1.SetScore(scoreOfPlayer1);
         scoreTextPlayer2.SetScore(scoreOfPlayer2);
     }
