@@ -11,6 +11,7 @@ public class GameManager : MonoBehaviour
     public event Action<int> OnWin;
     int scoreOfPlayer1, scoreOfPlayer2 = 0;
     int winScore = 5;
+    public PlayMode playMode;
 
     private void Awake()
     {
@@ -25,7 +26,7 @@ public class GameManager : MonoBehaviour
         }
     }
     // public GameUIController gameUI;
-    
+
 
     public void SetScores(string zoneTag)
     {
@@ -36,7 +37,11 @@ public class GameManager : MonoBehaviour
         //gameUI.UpdateScoreBoard(scoreOfPlayer1, scoreOfPlayer2);
         OnScoreChanged?.Invoke(scoreOfPlayer1, scoreOfPlayer2);
     }
-
+    public enum PlayMode
+    {
+        PlayerVsPlayer,
+        PlayerVsCPU
+    }
     public bool CheckWin()
     {
         int winnerId = scoreOfPlayer1 == winScore ? 1 : scoreOfPlayer2 == winScore ? 2 : 0;

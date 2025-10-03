@@ -7,7 +7,7 @@ public class BallController : MonoBehaviour
     public GameManager gameManager;
     public float ballSpeed = 12f;
     public float maxInitalAngle = 0.67f;
-    public Vector2 startingPosisiton = Vector2.zero;
+    public Vector2 startingPosition = Vector2.zero;
    
    void Update()
     {
@@ -30,7 +30,9 @@ public class BallController : MonoBehaviour
     private void OnTriggerEnter2D(Collider2D collision)
     {
         Debug.Log(collision.tag);
-        gameManager.SetScores(collision.tag);
+        //gameManager.SetScores(collision.tag);
+        GameManager.Instance.SetScores(collision.tag);
+
 
         if (!gameManager.CheckWin())
         {
@@ -42,7 +44,7 @@ public class BallController : MonoBehaviour
 
     public void ResetBall()
     {
-        Vector2 pos = startingPosisiton;
+        Vector2 pos = startingPosition;
         Vector2 vel = Vector2.zero;
         transform.position = pos;
         rb.linearVelocity = vel;

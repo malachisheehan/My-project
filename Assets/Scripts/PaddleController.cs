@@ -5,12 +5,35 @@ public class PaddleController : MonoBehaviour
     public Rigidbody2D rb;
     public int playerId;
     public float moveSpeed = 5f;
+    private Vector2 startPosition;
+    //public Transform ball;
+
 
     // Update is called once per frame
     void Update()
     {
-        float axisValue = GetAxisValue();
-        MovePaddle(axisValue);
+        if(playerId == 2 && GameManager.Instance.playMode == GameManager.PlayMode.PlayerVsCPU)
+        {
+            MoveCPU();
+        }
+
+        else
+        {
+            float axisValue = GetAxisValue();
+            MovePaddle(axisValue);
+        }
+            
+    }
+
+    private void OnEnable()
+    {
+        startPosition = transform.position;
+    }
+
+    private void MoveCPU()
+    {
+        Vector2 ballPosition = ball.transform.position;
+        transform.position = new Vector2(startPosition.x, ballPosition.y);
     }
 
     private void MovePaddle(float axisValue)
